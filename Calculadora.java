@@ -71,15 +71,6 @@ public class Calculadora {
         entrada.close();
     }
  
-    private static int leerOpcion(Scanner entrada) {
-        System.out.print("Elige una opción: ");
-        try {
-            return Integer.parseInt(entrada.nextLine().trim());
-        } catch (NumberFormatException error) {
-            return -1;
-        }
-    }
- 
     private static double leerNumero(Scanner entrada, String pregunta) {
         while (true) {
             System.out.print(pregunta);
@@ -92,6 +83,15 @@ public class Calculadora {
                 // Pedimos el número de nuevo debajo.
             }
             System.out.println("Escribe un número válido (usa punto para decimales).");
+        }
+    }
+
+    private static int leerOpcion(Scanner entrada) {
+        System.out.print("Elige una opción: ");
+        try {
+            return Integer.parseInt(entrada.nextLine().trim());
+        } catch (NumberFormatException error) {
+            return -1;
         }
     }
 }
